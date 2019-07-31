@@ -1,0 +1,38 @@
+sentence,Con,Num,Q,Rel,Neg
+There is a clock.,TRUE,FALSE,FALSE,FALSE,FALSE
+There is a white wall.,TRUE,FALSE,FALSE,FALSE,FALSE
+There is a sitting woman.,TRUE,FALSE,FALSE,FALSE,FALSE
+There is a table and a chair.,TRUE,FALSE,FALSE,FALSE,FALSE
+There is a boy or a girl.,TRUE,FALSE,FALSE,FALSE,FALSE
+There is a white car and a red bus.,TRUE,FALSE,FALSE,FALSE,FALSE
+There is a brown building or a black street.,TRUE,FALSE,FALSE,FALSE,FALSE
+There is a long red bus.,TRUE,FALSE,FALSE,FALSE,FALSE
+There is a red and white sign.,TRUE,FALSE,FALSE,FALSE,FALSE
+There is a blue or cloudy sky.,TRUE,FALSE,FALSE,FALSE,FALSE
+There are two laptops.,FALSE,TRUE,FALSE,FALSE,FALSE
+There are at least three men.,FALSE,TRUE,FALSE,FALSE,FALSE
+At least two dogs are black or white.,TRUE,TRUE,FALSE,FALSE,FALSE
+All windows are closed.,FALSE,FALSE,TRUE,FALSE,FALSE
+All women who have black hair are sitting.,FALSE,FALSE,TRUE,TRUE,FALSE
+Every man is walking.,FALSE,FALSE,TRUE,FALSE,FALSE
+Every green tree is tall.,FALSE,FALSE,TRUE,FALSE,FALSE
+A man is wearing a hat.,FALSE,FALSE,FALSE,TRUE,FALSE
+There is no women.,FALSE,FALSE,FALSE,FALSE,TRUE
+There is no blue car.,FALSE,FALSE,FALSE,FALSE,TRUE
+A woman is not smiling.,FALSE,FALSE,FALSE,FALSE,TRUE
+No umbrella is colorful.,FALSE,FALSE,FALSE,FALSE,TRUE
+There is a train which is not red.,FALSE,FALSE,FALSE,FALSE,TRUE
+There are two cups or three cups.,TRUE,TRUE,FALSE,FALSE,FALSE
+All tables are wooden and all chairs are wooden.,TRUE,FALSE,TRUE,FALSE,FALSE
+All hairs are black or brown.,TRUE,FALSE,TRUE,FALSE,FALSE
+A man is wearing glasses and is next to a woman.,TRUE,FALSE,FALSE,TRUE,FALSE
+A gray or black pole has two signs.,TRUE,TRUE,FALSE,TRUE,FALSE
+There are two men who are wearing a hat.,FALSE,TRUE,FALSE,TRUE,FALSE
+Three cars are not red.,FALSE,TRUE,FALSE,FALSE,TRUE
+There are not at least three buses.,FALSE,TRUE,FALSE,FALSE,TRUE
+All women wear a hat.,FALSE,FALSE,TRUE,TRUE,FALSE
+A man is not walking on a street.,FALSE,FALSE,FALSE,TRUE,TRUE
+A clock on a tower is not black.,FALSE,FALSE,FALSE,TRUE,TRUE
+All women are holding an bag or have black hair.,TRUE,FALSE,TRUE,TRUE,FALSE
+Two women aren't having black hair.,FALSE,TRUE,FALSE,TRUE,TRUE
+Every man isn't eating anything.,FALSE,FALSE,TRUE,TRUE,TRUE

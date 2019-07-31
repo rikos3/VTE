@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="rp" cat="S[dcl]">
+  <rule type="ba" cat="S[dcl]">
+   <rule type="fa" cat="NP[nb]">
+    <lf start="0" span="1" word="No" lemma="no" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+    <lf start="1" span="1" word="goat" lemma="goat" pos="NN" chunk="I-NP" entity="O" cat="N" />
+   </rule>
+   <rule type="fa" cat="S[dcl]\NP">
+    <rule type="bx" cat="(S[dcl]\NP)/(S[ng]\NP)">
+     <lf start="2" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[ng]\NP)" />
+     <lf start="3" span="1" word="not" lemma="not" pos="RB" chunk="I-VP" entity="O" cat="(S\NP)\(S\NP)" />
+    </rule>
+    <rule type="fa" cat="S[ng]\NP">
+     <lf start="4" span="1" word="eating" lemma="eat" pos="VBG" chunk="I-VP" entity="O" cat="(S[ng]\NP)/NP" />
+     <rule type="fa" cat="NP[nb]">
+      <lf start="5" span="1" word="a" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+      <lf start="6" span="1" word="carrot" lemma="carrot" pos="NN" chunk="I-NP" entity="O" cat="N" />
+     </rule>
+    </rule>
+   </rule>
+  </rule>
+  <lf start="7" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+<ccg>
+ <rule type="fa" cat="S[dcl]">
+  <rule type="fa" cat="S[X]/S[X]">
+   <lf start="0" span="1" word="While" lemma="while" pos="IN" chunk="I-SBAR" entity="O" cat="(S/S)/(S[ng]\NP)" />
+   <rule type="fa" cat="S[ng]\NP">
+    <lf start="1" span="1" word="looking" lemma="look" pos="VBG" chunk="I-VP" entity="O" cat="(S[ng]\NP)/(S[adj]\NP)" />
+    <lf start="2" span="1" word="annoyed" lemma="annoyed" pos="JJ" chunk="I-ADJP" entity="O" cat="S[adj]\NP" />
+   </rule>
+  </rule>
+  <rule type="lp" cat="S[dcl]">
+   <lf start="3" span="1" word="," lemma="," pos="," chunk="O" entity="O" cat="," />
+   <rule type="rp" cat="S[dcl]">
+    <rule type="ba" cat="S[dcl]">
+     <rule type="fa" cat="NP[nb]">
+      <lf start="4" span="1" word="the" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+      <lf start="5" span="1" word="goat" lemma="goat" pos="NN" chunk="I-NP" entity="O" cat="N" />
+     </rule>
+     <rule type="ba" cat="S[dcl]\NP">
+      <rule type="rp" cat="S[dcl]\NP">
+       <rule type="fa" cat="S[dcl]\NP">
+        <lf start="6" span="1" word="has" lemma="have" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" />
+        <rule type="ba" cat="NP">
+         <rule type="fa" cat="NP[nb]">
+          <lf start="7" span="1" word="a" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+          <lf start="8" span="1" word="carrot" lemma="carrot" pos="NN" chunk="I-NP" entity="O" cat="N" />
+         </rule>
+         <rule type="fa" cat="NP\NP">
+          <lf start="9" span="1" word="in" lemma="in" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
+          <rule type="fa" cat="NP[nb]">
+           <lf start="10" span="1" word="its" lemma="its" pos="PRP$" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+           <lf start="11" span="1" word="mouth" lemma="mouth" pos="NN" chunk="I-NP" entity="O" cat="N" />
+          </rule>
+         </rule>
+        </rule>
+       </rule>
+       <lf start="12" span="1" word="," lemma="," pos="," chunk="O" entity="O" cat="," />
+      </rule>
+      <rule type="fa" cat="(S[X]\NP)\(S[X]\NP)">
+       <lf start="13" span="1" word="as" lemma="as" pos="IN" chunk="I-SBAR" entity="O" cat="((S\NP)\(S\NP))/S[poss]" />
+       <rule type="fa" cat="S[poss]">
+        <lf start="14" span="1" word="if" lemma="if" pos="IN" chunk="I-SBAR" entity="O" cat="S[poss]/S[dcl]" />
+        <rule type="ba" cat="S[dcl]">
+         <lf start="15" span="1" word="it" lemma="it" pos="PRP" chunk="I-NP" entity="O" cat="NP" />
+         <rule type="fa" cat="S[dcl]\NP">
+          <lf start="16" span="1" word="were" lemma="be" pos="VBD" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/NP" />
+          <rule type="fa" cat="NP[nb]">
+           <lf start="17" span="1" word="a" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+           <lf start="18" span="1" word="cigar" lemma="cigar" pos="NN" chunk="I-NP" entity="O" cat="N" />
+          </rule>
+         </rule>
+        </rule>
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+    <lf start="19" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+   </rule>
+  </rule>
+ </rule>
+</ccg>
+<ccg>
+ <rule type="rp" cat="S[dcl]">
+  <rule type="ba" cat="S[dcl]">
+   <lf start="0" span="1" word="There" lemma="there" pos="EX" chunk="I-NP" entity="O" cat="NP[thr]" />
+   <rule type="fa" cat="S[dcl]\NP[thr]">
+    <lf start="1" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP[thr])/NP" />
+    <rule type="lex" cat="NP">
+     <rule type="fa" cat="N">
+      <rule type="fa" cat="N/N">
+       <lf start="2" span="1" word="only" lemma="only" pos="RB" chunk="I-NP" entity="O" cat="(N/N)/(N/N)" />
+       <lf start="3" span="1" word="1" lemma="1" pos="CD" chunk="I-NP" entity="I-PCT" cat="N/N" />
+      </rule>
+      <lf start="4" span="1" word="goat" lemma="goat" pos="NN" chunk="I-NP" entity="I-PCT" cat="N" />
+     </rule>
+    </rule>
+   </rule>
+  </rule>
+  <lf start="5" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+<ccg>
+ <rule type="rp" cat="S[dcl]">
+  <rule type="ba" cat="S[dcl]">
+   <rule type="fa" cat="NP[nb]">
+    <lf start="0" span="1" word="A" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+    <lf start="1" span="1" word="goat" lemma="goat" pos="NN" chunk="I-NP" entity="O" cat="N" />
+   </rule>
+   <rule type="fa" cat="S[dcl]\NP">
+    <lf start="2" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[ng]\NP)" />
+    <rule type="fa" cat="S[ng]\NP">
+     <lf start="3" span="1" word="eating" lemma="eat" pos="VBG" chunk="I-VP" entity="O" cat="(S[ng]\NP)/NP" />
+     <rule type="fa" cat="NP[nb]">
+      <lf start="4" span="1" word="a" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+      <lf start="5" span="1" word="carrot" lemma="carrot" pos="NN" chunk="I-NP" entity="O" cat="N" />
+     </rule>
+    </rule>
+   </rule>
+  </rule>
+  <lf start="6" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+</candc>

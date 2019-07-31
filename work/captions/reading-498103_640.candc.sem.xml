@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <document>
+    <sentences>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="EX" chunk="I-NP" entity="O" cat="NP[thr]" id="t0_0" surf="There" base="there"/>
+          <token start="1" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP[thr])/NP" id="t0_1" surf="is" base="be"/>
+          <token start="2" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_2" surf="a" base="a"/>
+          <token start="3" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_3" surf="cat" base="cat"/>
+          <token start="4" span="1" pos="VBG" chunk="I-VP" entity="O" cat="(S[ng]\NP)/NP" id="t0_4" surf="touching" base="touch"/>
+          <token start="5" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_5" surf="a" base="a"/>
+          <token start="6" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_6" surf="book" base="book"/>
+          <token start="7" span="1" pos="." chunk="O" entity="O" cat="." id="t0_7" surf="." base="."/>
+        </tokens>
+        <ccg root="s0_sp0" id="s0_ccg0">
+          <span root="true" id="s0_sp0" child="s0_sp1 s0_sp15" pos="None" category="S[dcl=true]" rule="rp"/>
+          <span id="s0_sp1" child="s0_sp2 s0_sp3" pos="None" category="S[dcl=true]" rule="ba"/>
+          <span start="0" span="1" pos="EX" chunk="I-NP" entity="O" id="s0_sp2" surf="There" base="there" terminal="t0_0" category="NP[thr=true]"/>
+          <span id="s0_sp3" child="s0_sp4 s0_sp5" pos="None" category="S[dcl=true]\NP[thr=true]" rule="fa"/>
+          <span start="1" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s0_sp4" surf="is" base="be" terminal="t0_1" category="(S[dcl=true]\NP[thr=true])/NP"/>
+          <span id="s0_sp5" child="s0_sp6 s0_sp9" pos="None" category="NP" rule="ba"/>
+          <span id="s0_sp6" child="s0_sp7 s0_sp8" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="2" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp7" surf="a" base="a" terminal="t0_2" category="NP[nb=true]/N"/>
+          <span start="3" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp8" surf="cat" base="cat" terminal="t0_3" category="N"/>
+          <span id="s0_sp9" child="s0_sp10" pos="None" category="NP\NP" rule="lex"/>
+          <span id="s0_sp10" child="s0_sp11 s0_sp12" pos="None" category="S[ng=true]\NP" rule="fa"/>
+          <span start="4" span="1" pos="VBG" chunk="I-VP" entity="O" id="s0_sp11" surf="touching" base="touch" terminal="t0_4" category="(S[ng=true]\NP)/NP"/>
+          <span id="s0_sp12" child="s0_sp13 s0_sp14" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="5" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp13" surf="a" base="a" terminal="t0_5" category="NP[nb=true]/N"/>
+          <span start="6" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp14" surf="book" base="book" terminal="t0_6" category="N"/>
+          <span start="7" span="1" pos="." chunk="O" entity="O" id="s0_sp15" surf="." base="." terminal="t0_7" category="."/>
+        </ccg>
+        <semantics status="success" ccg_id="s0_ccg0" root="s0_sp0">
+          <span id="s0_sp0" child="s0_sp1 s0_sp15" sem="exists x.(_cat(x) &amp; exists z1.(_book(z1) &amp; TrueP &amp; _touch(x,z1)) &amp; True &amp; True)"/>
+          <span id="s0_sp1" child="s0_sp2 s0_sp3" sem="exists x.(_cat(x) &amp; exists z1.(_book(z1) &amp; TrueP &amp; _touch(x,z1)) &amp; True &amp; True)"/>
+          <span id="s0_sp2" sem="\F1 F2.F2(_there)"/>
+          <span id="s0_sp3" child="s0_sp4 s0_sp5" sem="\Q2.Q2(\w.True,\x.exists x.(_cat(x) &amp; exists z1.(_book(z1) &amp; TrueP &amp; _touch(x,z1)) &amp; True &amp; True))"/>
+          <span id="s0_sp4" sem="\Q1 Q2.Q2(\w.True,\x.Q1(\w.True,\w.True))"/>
+          <span id="s0_sp5" child="s0_sp6 s0_sp9" sem="\F1 F3.exists x.(_cat(x) &amp; exists z1.(_book(z1) &amp; TrueP &amp; _touch(x,z1)) &amp; F1(x) &amp; F3(x))"/>
+          <span id="s0_sp6" child="s0_sp7 s0_sp8" sem="\F2 F3.exists x.(_cat(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s0_sp7" sem="\F1 F2 F3.exists x.(F1(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s0_sp8" sem="\x._cat(x)" type="_cat : Entity -&gt; Prop"/>
+          <span id="s0_sp9" child="s0_sp10" sem="\Q F1.Q(\x.(exists z1.(_book(z1) &amp; TrueP &amp; _touch(x,z1)) &amp; F1(x)))"/>
+          <span id="s0_sp10" child="s0_sp11 s0_sp12" sem="\Q2.Q2(\w.TrueP,\x.exists z1.(_book(z1) &amp; TrueP &amp; _touch(x,z1)))"/>
+          <span id="s0_sp11" sem="\Q1 Q2.Q2(\w.TrueP,\x.Q1(\w.TrueP,\y._touch(x,y)))" type="_touch : Entity -&gt; Entity -&gt; Prop"/>
+          <span id="s0_sp12" child="s0_sp13 s0_sp14" sem="\F2 F3.exists x.(_book(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s0_sp13" sem="\F1 F2 F3.exists x.(F1(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s0_sp14" sem="\x._book(x)" type="_book : Entity -&gt; Prop"/>
+          <span id="s0_sp15" sem="\X.X"/>
+        </semantics>
+      </sentence>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="EX" chunk="I-NP" entity="O" cat="NP[thr]" id="t1_0" surf="There" base="there"/>
+          <token start="1" span="1" pos="VBP" chunk="I-VP" entity="O" cat="(S[dcl]\NP[thr])/NP" id="t1_1" surf="are" base="be"/>
+          <token start="2" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t1_2" surf="no" base="no"/>
+          <token start="3" span="1" pos="NNS" chunk="I-NP" entity="O" cat="N" id="t1_3" surf="pictures" base="picture"/>
+          <token start="4" span="1" pos="IN" chunk="I-PP" entity="O" cat="((S\NP)\(S\NP))/NP" id="t1_4" surf="in" base="in"/>
+          <token start="5" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t1_5" surf="the" base="the"/>
+          <token start="6" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t1_6" surf="book" base="book"/>
+          <token start="7" span="1" pos="." chunk="O" entity="O" cat="." id="t1_7" surf="." base="."/>
+        </tokens>
+        <ccg root="s1_sp0" id="s1_ccg0">
+          <span root="true" id="s1_sp0" child="s1_sp1 s1_sp14" pos="None" category="S[dcl=true]" rule="rp"/>
+          <span id="s1_sp1" child="s1_sp2 s1_sp3" pos="None" category="S[dcl=true]" rule="ba"/>
+          <span start="0" span="1" pos="EX" chunk="I-NP" entity="O" id="s1_sp2" surf="There" base="there" terminal="t1_0" category="NP[thr=true]"/>
+          <span id="s1_sp3" child="s1_sp4 s1_sp9" pos="None" category="S[dcl=true]\NP" rule="ba"/>
+          <span id="s1_sp4" child="s1_sp5 s1_sp6" pos="None" category="S[dcl=true]\NP[thr=true]" rule="fa"/>
+          <span start="1" span="1" pos="VBP" chunk="I-VP" entity="O" id="s1_sp5" surf="are" base="be" terminal="t1_1" category="(S[dcl=true]\NP[thr=true])/NP"/>
+          <span id="s1_sp6" child="s1_sp7 s1_sp8" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="2" span="1" pos="DT" chunk="I-NP" entity="O" id="s1_sp7" surf="no" base="no" terminal="t1_2" category="NP[nb=true]/N"/>
+          <span start="3" span="1" pos="NNS" chunk="I-NP" entity="O" id="s1_sp8" surf="pictures" base="picture" terminal="t1_3" category="N"/>
+          <span id="s1_sp9" child="s1_sp10 s1_sp11" pos="None" category="(S[X=true]\NP)\(S[X=true]\NP)" rule="fa"/>
+          <span start="4" span="1" pos="IN" chunk="I-PP" entity="O" id="s1_sp10" surf="in" base="in" terminal="t1_4" category="((S\NP)\(S\NP))/NP"/>
+          <span id="s1_sp11" child="s1_sp12 s1_sp13" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="5" span="1" pos="DT" chunk="I-NP" entity="O" id="s1_sp12" surf="the" base="the" terminal="t1_5" category="NP[nb=true]/N"/>
+          <span start="6" span="1" pos="NN" chunk="I-NP" entity="O" id="s1_sp13" surf="book" base="book" terminal="t1_6" category="N"/>
+          <span start="7" span="1" pos="." chunk="O" entity="O" id="s1_sp14" surf="." base="." terminal="t1_7" category="."/>
+        </ccg>
+        <semantics status="success" ccg_id="s1_ccg0" root="s1_sp0">
+          <span id="s1_sp0" child="s1_sp1 s1_sp14" sem="exists z1.(_book(z1) &amp; TrueP &amp; _in(_there,z1) &amp; all z2.(_picture(z2) -&gt; (True -&gt; -True)))"/>
+          <span id="s1_sp1" child="s1_sp2 s1_sp3" sem="exists z1.(_book(z1) &amp; TrueP &amp; _in(_there,z1) &amp; all z2.(_picture(z2) -&gt; (True -&gt; -True)))"/>
+          <span id="s1_sp2" sem="\F1 F2.F2(_there)"/>
+          <span id="s1_sp3" child="s1_sp4 s1_sp9" sem="\Q2.Q2(\w.TrueP,\x.exists z1.(_book(z1) &amp; TrueP &amp; _in(x,z1) &amp; all z2.(_picture(z2) -&gt; (True -&gt; -True))))"/>
+          <span id="s1_sp4" child="s1_sp5 s1_sp6" sem="\Q2.Q2(\w.True,\x.all x.(_picture(x) -&gt; (True -&gt; -True)))"/>
+          <span id="s1_sp5" sem="\Q1 Q2.Q2(\w.True,\x.Q1(\w.True,\w.True))"/>
+          <span id="s1_sp6" child="s1_sp7 s1_sp8" sem="\F2 F3.all x.(_picture(x) -&gt; (F2(x) -&gt; -F3(x)))"/>
+          <span id="s1_sp7" sem="\F1 F2 F3.all x.(F1(x) -&gt; (F2(x) -&gt; -F3(x)))"/>
+          <span id="s1_sp8" sem="\x._picture(x)" type="_picture : Entity -&gt; Prop"/>
+          <span id="s1_sp9" child="s1_sp10 s1_sp11" sem="\V Q2.Q2(\w.TrueP,\x.exists z1.(_book(z1) &amp; TrueP &amp; _in(x,z1) &amp; V(\F1 F2.F2(x))))"/>
+          <span id="s1_sp10" sem="\Q1 V Q2.Q2(\w.TrueP,\x.Q1(\w.TrueP,\y.(_in(x,y) &amp; V(\F1 F2.F2(x)))))" type="_in : Entity -&gt; Entity -&gt; Prop"/>
+          <span id="s1_sp11" child="s1_sp12 s1_sp13" sem="\F2 F3.exists x.(_book(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s1_sp12" sem="\F1 F2 F3.exists x.(F1(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s1_sp13" sem="\x._book(x)" type="_book : Entity -&gt; Prop"/>
+          <span id="s1_sp14" sem="\X.X"/>
+        </semantics>
+      </sentence>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t2_0" surf="The" base="the"/>
+          <token start="1" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t2_1" surf="cat" base="cat"/>
+          <token start="2" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/PP" id="t2_2" surf="is" base="be"/>
+          <token start="3" span="1" pos="IN" chunk="I-PP" entity="O" cat="PP/NP" id="t2_3" surf="on" base="on"/>
+          <token start="4" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t2_4" surf="the" base="the"/>
+          <token start="5" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t2_5" surf="mat" base="mat"/>
+          <token start="6" span="1" pos="." chunk="O" entity="O" cat="." id="t2_6" surf="." base="."/>
+        </tokens>
+        <ccg root="s2_sp0" id="s2_ccg0">
+          <span root="true" id="s2_sp0" child="s2_sp1 s2_sp12" pos="None" category="S[dcl=true]" rule="rp"/>
+          <span id="s2_sp1" child="s2_sp2 s2_sp5" pos="None" category="S[dcl=true]" rule="ba"/>
+          <span id="s2_sp2" child="s2_sp3 s2_sp4" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="0" span="1" pos="DT" chunk="I-NP" entity="O" id="s2_sp3" surf="The" base="the" terminal="t2_0" category="NP[nb=true]/N"/>
+          <span start="1" span="1" pos="NN" chunk="I-NP" entity="O" id="s2_sp4" surf="cat" base="cat" terminal="t2_1" category="N"/>
+          <span id="s2_sp5" child="s2_sp6 s2_sp7" pos="None" category="S[dcl=true]\NP" rule="fa"/>
+          <span start="2" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s2_sp6" surf="is" base="be" terminal="t2_2" category="(S[dcl=true]\NP)/PP"/>
+          <span id="s2_sp7" child="s2_sp8 s2_sp9" pos="None" category="PP" rule="fa"/>
+          <span start="3" span="1" pos="IN" chunk="I-PP" entity="O" id="s2_sp8" surf="on" base="on" terminal="t2_3" category="PP/NP"/>
+          <span id="s2_sp9" child="s2_sp10 s2_sp11" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="4" span="1" pos="DT" chunk="I-NP" entity="O" id="s2_sp10" surf="the" base="the" terminal="t2_4" category="NP[nb=true]/N"/>
+          <span start="5" span="1" pos="NN" chunk="I-NP" entity="O" id="s2_sp11" surf="mat" base="mat" terminal="t2_5" category="N"/>
+          <span start="6" span="1" pos="." chunk="O" entity="O" id="s2_sp12" surf="." base="." terminal="t2_6" category="."/>
+        </ccg>
+        <semantics status="success" ccg_id="s2_ccg0" root="s2_sp0">
+          <span id="s2_sp0" child="s2_sp1 s2_sp12" sem="exists x.(_cat(x) &amp; TrueP &amp; exists z1.(_mat(z1) &amp; TrueP &amp; _on(x,z1)))"/>
+          <span id="s2_sp1" child="s2_sp2 s2_sp5" sem="exists x.(_cat(x) &amp; TrueP &amp; exists z1.(_mat(z1) &amp; TrueP &amp; _on(x,z1)))"/>
+          <span id="s2_sp2" child="s2_sp3 s2_sp4" sem="\F2 F3.exists x.(_cat(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s2_sp3" sem="\F1 F2 F3.exists x.(F1(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s2_sp4" sem="\x._cat(x)" type="_cat : Entity -&gt; Prop"/>
+          <span id="s2_sp5" child="s2_sp6 s2_sp7" sem="\Q.Q(\w.TrueP,\x.exists z1.(_mat(z1) &amp; TrueP &amp; _on(x,z1)))"/>
+          <span id="s2_sp6" sem="\F Q.Q(\w.TrueP,F)"/>
+          <span id="s2_sp7" child="s2_sp8 s2_sp9" sem="\x.exists z1.(_mat(z1) &amp; TrueP &amp; _on(x,z1))"/>
+          <span id="s2_sp8" sem="\Q x.Q(\w.TrueP,\y._on(x,y))" type="_on : Entity -&gt; Entity -&gt; Prop"/>
+          <span id="s2_sp9" child="s2_sp10 s2_sp11" sem="\F2 F3.exists x.(_mat(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s2_sp10" sem="\F1 F2 F3.exists x.(F1(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s2_sp11" sem="\x._mat(x)" type="_mat : Entity -&gt; Prop"/>
+          <span id="s2_sp12" sem="\X.X"/>
+        </semantics>
+      </sentence>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t3_0" surf="The" base="the"/>
+          <token start="1" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t3_1" surf="mat" base="mat"/>
+          <token start="2" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/PP" id="t3_2" surf="is" base="be"/>
+          <token start="3" span="1" pos="IN" chunk="I-PP" entity="O" cat="PP/NP" id="t3_3" surf="on" base="on"/>
+          <token start="4" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t3_4" surf="the" base="the"/>
+          <token start="5" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t3_5" surf="grass" base="grass"/>
+          <token start="6" span="1" pos="." chunk="O" entity="O" cat="." id="t3_6" surf="." base="."/>
+        </tokens>
+        <ccg root="s3_sp0" id="s3_ccg0">
+          <span root="true" id="s3_sp0" child="s3_sp1 s3_sp12" pos="None" category="S[dcl=true]" rule="rp"/>
+          <span id="s3_sp1" child="s3_sp2 s3_sp5" pos="None" category="S[dcl=true]" rule="ba"/>
+          <span id="s3_sp2" child="s3_sp3 s3_sp4" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="0" span="1" pos="DT" chunk="I-NP" entity="O" id="s3_sp3" surf="The" base="the" terminal="t3_0" category="NP[nb=true]/N"/>
+          <span start="1" span="1" pos="NN" chunk="I-NP" entity="O" id="s3_sp4" surf="mat" base="mat" terminal="t3_1" category="N"/>
+          <span id="s3_sp5" child="s3_sp6 s3_sp7" pos="None" category="S[dcl=true]\NP" rule="fa"/>
+          <span start="2" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s3_sp6" surf="is" base="be" terminal="t3_2" category="(S[dcl=true]\NP)/PP"/>
+          <span id="s3_sp7" child="s3_sp8 s3_sp9" pos="None" category="PP" rule="fa"/>
+          <span start="3" span="1" pos="IN" chunk="I-PP" entity="O" id="s3_sp8" surf="on" base="on" terminal="t3_3" category="PP/NP"/>
+          <span id="s3_sp9" child="s3_sp10 s3_sp11" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="4" span="1" pos="DT" chunk="I-NP" entity="O" id="s3_sp10" surf="the" base="the" terminal="t3_4" category="NP[nb=true]/N"/>
+          <span start="5" span="1" pos="NN" chunk="I-NP" entity="O" id="s3_sp11" surf="grass" base="grass" terminal="t3_5" category="N"/>
+          <span start="6" span="1" pos="." chunk="O" entity="O" id="s3_sp12" surf="." base="." terminal="t3_6" category="."/>
+        </ccg>
+        <semantics status="success" ccg_id="s3_ccg0" root="s3_sp0">
+          <span id="s3_sp0" child="s3_sp1 s3_sp12" sem="exists x.(_mat(x) &amp; TrueP &amp; exists z2.(_grass(z2) &amp; TrueP &amp; _on(x,z2)))"/>
+          <span id="s3_sp1" child="s3_sp2 s3_sp5" sem="exists x.(_mat(x) &amp; TrueP &amp; exists z2.(_grass(z2) &amp; TrueP &amp; _on(x,z2)))"/>
+          <span id="s3_sp2" child="s3_sp3 s3_sp4" sem="\F2 F3.exists x.(_mat(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s3_sp3" sem="\F1 F2 F3.exists x.(F1(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s3_sp4" sem="\x._mat(x)" type="_mat : Entity -&gt; Prop"/>
+          <span id="s3_sp5" child="s3_sp6 s3_sp7" sem="\Q.Q(\w.TrueP,\x.exists z2.(_grass(z2) &amp; TrueP &amp; _on(x,z2)))"/>
+          <span id="s3_sp6" sem="\F Q.Q(\w.TrueP,F)"/>
+          <span id="s3_sp7" child="s3_sp8 s3_sp9" sem="\x.exists z2.(_grass(z2) &amp; TrueP &amp; _on(x,z2))"/>
+          <span id="s3_sp8" sem="\Q x.Q(\w.TrueP,\y._on(x,y))" type="_on : Entity -&gt; Entity -&gt; Prop"/>
+          <span id="s3_sp9" child="s3_sp10 s3_sp11" sem="\F2 F3.exists x.(_grass(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s3_sp10" sem="\F1 F2 F3.exists x.(F1(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s3_sp11" sem="\x._grass(x)" type="_grass : Entity -&gt; Prop"/>
+          <span id="s3_sp12" sem="\X.X"/>
+        </semantics>
+      </sentence>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t4_0" surf="The" base="the"/>
+          <token start="1" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t4_1" surf="cat" base="cat"/>
+          <token start="2" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[to]\NP)" id="t4_2" surf="appears" base="appear"/>
+          <token start="3" span="1" pos="TO" chunk="I-VP" entity="O" cat="(S[to]\NP)/(S[b]\NP)" id="t4_3" surf="to" base="to"/>
+          <token start="4" span="1" pos="VB" chunk="I-VP" entity="O" cat="(S[b]\NP)/(S[ng]\NP)" id="t4_4" surf="be" base="be"/>
+          <token start="5" span="1" pos="VBG" chunk="I-VP" entity="O" cat="(S[ng]\NP)/NP" id="t4_5" surf="reading" base="read"/>
+          <token start="6" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t4_6" surf="a" base="a"/>
+          <token start="7" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t4_7" surf="novel" base="novel"/>
+          <token start="8" span="1" pos="." chunk="O" entity="O" cat="." id="t4_8" surf="." base="."/>
+        </tokens>
+        <ccg root="s4_sp0" id="s4_ccg0">
+          <span root="true" id="s4_sp0" child="s4_sp1 s4_sp16" pos="None" category="S[dcl=true]" rule="rp"/>
+          <span id="s4_sp1" child="s4_sp2 s4_sp5" pos="None" category="S[dcl=true]" rule="ba"/>
+          <span id="s4_sp2" child="s4_sp3 s4_sp4" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="0" span="1" pos="DT" chunk="I-NP" entity="O" id="s4_sp3" surf="The" base="the" terminal="t4_0" category="NP[nb=true]/N"/>
+          <span start="1" span="1" pos="NN" chunk="I-NP" entity="O" id="s4_sp4" surf="cat" base="cat" terminal="t4_1" category="N"/>
+          <span id="s4_sp5" child="s4_sp6 s4_sp7" pos="None" category="S[dcl=true]\NP" rule="fa"/>
+          <span start="2" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s4_sp6" surf="appears" base="appear" terminal="t4_2" category="(S[dcl=true]\NP)/(S[to=true]\NP)"/>
+          <span id="s4_sp7" child="s4_sp8 s4_sp9" pos="None" category="S[to=true]\NP" rule="fa"/>
+          <span start="3" span="1" pos="TO" chunk="I-VP" entity="O" id="s4_sp8" surf="to" base="to" terminal="t4_3" category="(S[to=true]\NP)/(S[b=true]\NP)"/>
+          <span id="s4_sp9" child="s4_sp10 s4_sp11" pos="None" category="S[b=true]\NP" rule="fa"/>
+          <span start="4" span="1" pos="VB" chunk="I-VP" entity="O" id="s4_sp10" surf="be" base="be" terminal="t4_4" category="(S[b=true]\NP)/(S[ng=true]\NP)"/>
+          <span id="s4_sp11" child="s4_sp12 s4_sp13" pos="None" category="S[ng=true]\NP" rule="fa"/>
+          <span start="5" span="1" pos="VBG" chunk="I-VP" entity="O" id="s4_sp12" surf="reading" base="read" terminal="t4_5" category="(S[ng=true]\NP)/NP"/>
+          <span id="s4_sp13" child="s4_sp14 s4_sp15" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="6" span="1" pos="DT" chunk="I-NP" entity="O" id="s4_sp14" surf="a" base="a" terminal="t4_6" category="NP[nb=true]/N"/>
+          <span start="7" span="1" pos="NN" chunk="I-NP" entity="O" id="s4_sp15" surf="novel" base="novel" terminal="t4_7" category="N"/>
+          <span start="8" span="1" pos="." chunk="O" entity="O" id="s4_sp16" surf="." base="." terminal="t4_8" category="."/>
+        </ccg>
+        <semantics status="success" ccg_id="s4_ccg0" root="s4_sp0">
+          <span id="s4_sp0" child="s4_sp1 s4_sp16" sem="exists x.(_cat(x) &amp; TrueP &amp; _appear(x,exists z3.(_novel(z3) &amp; TrueP &amp; _read(x,z3))))"/>
+          <span id="s4_sp1" child="s4_sp2 s4_sp5" sem="exists x.(_cat(x) &amp; TrueP &amp; _appear(x,exists z3.(_novel(z3) &amp; TrueP &amp; _read(x,z3))))"/>
+          <span id="s4_sp2" child="s4_sp3 s4_sp4" sem="\F2 F3.exists x.(_cat(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s4_sp3" sem="\F1 F2 F3.exists x.(F1(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s4_sp4" sem="\x._cat(x)" type="_cat : Entity -&gt; Prop"/>
+          <span id="s4_sp5" child="s4_sp6 s4_sp7" sem="\Q.Q(\w.TrueP,\x._appear(x,exists z3.(_novel(z3) &amp; TrueP &amp; _read(x,z3))))"/>
+          <span id="s4_sp6" sem="\V Q.Q(\w.TrueP,\x.V(\F1 F2._appear(x,F2(x))))" type="_appear : Entity -&gt; Prop -&gt; Prop"/>
+          <span id="s4_sp7" child="s4_sp8 s4_sp9" sem="\Q2.Q2(\w.TrueP,\x.exists z3.(_novel(z3) &amp; TrueP &amp; _read(x,z3)))"/>
+          <span id="s4_sp8" sem="\X.X"/>
+          <span id="s4_sp9" child="s4_sp10 s4_sp11" sem="\Q2.Q2(\w.TrueP,\x.exists z3.(_novel(z3) &amp; TrueP &amp; _read(x,z3)))"/>
+          <span id="s4_sp10" sem="\X.X"/>
+          <span id="s4_sp11" child="s4_sp12 s4_sp13" sem="\Q2.Q2(\w.TrueP,\x.exists z3.(_novel(z3) &amp; TrueP &amp; _read(x,z3)))"/>
+          <span id="s4_sp12" sem="\Q1 Q2.Q2(\w.TrueP,\x.Q1(\w.TrueP,\y._read(x,y)))" type="_read : Entity -&gt; Entity -&gt; Prop"/>
+          <span id="s4_sp13" child="s4_sp14 s4_sp15" sem="\F2 F3.exists x.(_novel(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s4_sp14" sem="\F1 F2 F3.exists x.(F1(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s4_sp15" sem="\x._novel(x)" type="_novel : Entity -&gt; Prop"/>
+          <span id="s4_sp16" sem="\X.X"/>
+        </semantics>
+      </sentence>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t5_0" surf="The" base="the"/>
+          <token start="1" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t5_1" surf="cat" base="cat"/>
+          <token start="2" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="((S[dcl]\NP)/PP)/NP" id="t5_2" surf="touches" base="touch"/>
+          <token start="3" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t5_3" surf="the" base="the"/>
+          <token start="4" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t5_4" surf="novel" base="novel"/>
+          <token start="5" span="1" pos="IN" chunk="I-PP" entity="O" cat="PP/NP" id="t5_5" surf="with" base="with"/>
+          <token start="6" span="1" pos="PRP$" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t5_6" surf="his" base="his"/>
+          <token start="7" span="1" pos="NN" chunk="I-NP" entity="O" cat="N/N" id="t5_7" surf="left" base="left"/>
+          <token start="8" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t5_8" surf="paw" base="paw"/>
+          <token start="9" span="1" pos="." chunk="O" entity="O" cat="." id="t5_9" surf="." base="."/>
+        </tokens>
+        <ccg root="s5_sp0" id="s5_ccg0">
+          <span root="true" id="s5_sp0" child="s5_sp1 s5_sp18" pos="None" category="S[dcl=true]" rule="rp"/>
+          <span id="s5_sp1" child="s5_sp2 s5_sp5" pos="None" category="S[dcl=true]" rule="ba"/>
+          <span id="s5_sp2" child="s5_sp3 s5_sp4" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="0" span="1" pos="DT" chunk="I-NP" entity="O" id="s5_sp3" surf="The" base="the" terminal="t5_0" category="NP[nb=true]/N"/>
+          <span start="1" span="1" pos="NN" chunk="I-NP" entity="O" id="s5_sp4" surf="cat" base="cat" terminal="t5_1" category="N"/>
+          <span id="s5_sp5" child="s5_sp6 s5_sp11" pos="None" category="S[dcl=true]\NP" rule="fa"/>
+          <span id="s5_sp6" child="s5_sp7 s5_sp8" pos="None" category="(S[dcl=true]\NP)/PP" rule="fa"/>
+          <span start="2" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s5_sp7" surf="touches" base="touch" terminal="t5_2" category="((S[dcl=true]\NP)/PP)/NP"/>
+          <span id="s5_sp8" child="s5_sp9 s5_sp10" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="3" span="1" pos="DT" chunk="I-NP" entity="O" id="s5_sp9" surf="the" base="the" terminal="t5_3" category="NP[nb=true]/N"/>
+          <span start="4" span="1" pos="NN" chunk="I-NP" entity="O" id="s5_sp10" surf="novel" base="novel" terminal="t5_4" category="N"/>
+          <span id="s5_sp11" child="s5_sp12 s5_sp13" pos="None" category="PP" rule="fa"/>
+          <span start="5" span="1" pos="IN" chunk="I-PP" entity="O" id="s5_sp12" surf="with" base="with" terminal="t5_5" category="PP/NP"/>
+          <span id="s5_sp13" child="s5_sp14 s5_sp15" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="6" span="1" pos="PRP$" chunk="I-NP" entity="O" id="s5_sp14" surf="his" base="his" terminal="t5_6" category="NP[nb=true]/N"/>
+          <span id="s5_sp15" child="s5_sp16 s5_sp17" pos="None" category="N" rule="fa"/>
+          <span start="7" span="1" pos="NN" chunk="I-NP" entity="O" id="s5_sp16" surf="left" base="left" terminal="t5_7" category="N/N"/>
+          <span start="8" span="1" pos="NN" chunk="I-NP" entity="O" id="s5_sp17" surf="paw" base="paw" terminal="t5_8" category="N"/>
+          <span start="9" span="1" pos="." chunk="O" entity="O" id="s5_sp18" surf="." base="." terminal="t5_9" category="."/>
+        </ccg>
+        <semantics status="success" ccg_id="s5_ccg0" root="s5_sp0">
+          <span id="s5_sp0" child="s5_sp1 s5_sp18" sem="exists x.(_cat(x) &amp; TrueP &amp; exists z3.(_novel(z3) &amp; TrueP &amp; _touch(x,z3)) &amp; exists z4.(_left(z4) &amp; _paw(z4) &amp; TrueP &amp; _with(x,z4)))"/>
+          <span id="s5_sp1" child="s5_sp2 s5_sp5" sem="exists x.(_cat(x) &amp; TrueP &amp; exists z3.(_novel(z3) &amp; TrueP &amp; _touch(x,z3)) &amp; exists z4.(_left(z4) &amp; _paw(z4) &amp; TrueP &amp; _with(x,z4)))"/>
+          <span id="s5_sp2" child="s5_sp3 s5_sp4" sem="\F2 F3.exists x.(_cat(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s5_sp3" sem="\F1 F2 F3.exists x.(F1(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s5_sp4" sem="\x._cat(x)" type="_cat : Entity -&gt; Prop"/>
+          <span id="s5_sp5" child="s5_sp6 s5_sp11" sem="\Q2.Q2(\w.TrueP,\x.(exists z3.(_novel(z3) &amp; TrueP &amp; _touch(x,z3)) &amp; exists z4.(_left(z4) &amp; _paw(z4) &amp; TrueP &amp; _with(x,z4))))"/>
+          <span id="s5_sp6" child="s5_sp7 s5_sp8" sem="\F Q2.Q2(\w.TrueP,\x.(exists z3.(_novel(z3) &amp; TrueP &amp; _touch(x,z3)) &amp; F(x)))"/>
+          <span id="s5_sp7" sem="\Q1 F Q2.Q2(\w.TrueP,\x.(Q1(\w.TrueP,\y._touch(x,y)) &amp; F(x)))" type="_touch : Entity -&gt; Entity -&gt; Prop"/>
+          <span id="s5_sp8" child="s5_sp9 s5_sp10" sem="\F2 F3.exists x.(_novel(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s5_sp9" sem="\F1 F2 F3.exists x.(F1(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s5_sp10" sem="\x._novel(x)" type="_novel : Entity -&gt; Prop"/>
+          <span id="s5_sp11" child="s5_sp12 s5_sp13" sem="\x.exists z4.(_left(z4) &amp; _paw(z4) &amp; TrueP &amp; _with(x,z4))"/>
+          <span id="s5_sp12" sem="\Q x.Q(\w.TrueP,\y._with(x,y))" type="_with : Entity -&gt; Entity -&gt; Prop"/>
+          <span id="s5_sp13" child="s5_sp14 s5_sp15" sem="\F2 F3.exists x.(_left(x) &amp; _paw(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s5_sp14" sem="\F1 F2 F3.exists x.(F1(x) &amp; F2(x) &amp; F3(x))"/>
+          <span id="s5_sp15" child="s5_sp16 s5_sp17" sem="\x.(_left(x) &amp; _paw(x))"/>
+          <span id="s5_sp16" sem="\F x.(_left(x) &amp; F(x))" type="_left : Entity -&gt; Prop"/>
+          <span id="s5_sp17" sem="\x._paw(x)" type="_paw : Entity -&gt; Prop"/>
+          <span id="s5_sp18" sem="\X.X"/>
+        </semantics>
+      </sentence>
+    </sentences>
+  </document>
+</root>

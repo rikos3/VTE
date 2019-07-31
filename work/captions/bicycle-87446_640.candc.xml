@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="rp" cat="S[dcl]">
+  <rule type="ba" cat="S[dcl]">
+   <rule type="fa" cat="NP[nb]">
+    <lf start="0" span="1" word="A" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+    <rule type="fa" cat="N">
+     <lf start="1" span="1" word="black" lemma="black" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
+     <lf start="2" span="1" word="car" lemma="car" pos="NN" chunk="I-NP" entity="O" cat="N" />
+    </rule>
+   </rule>
+   <rule type="fa" cat="S[dcl]\NP">
+    <lf start="3" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[pss]\NP)" />
+    <rule type="ba" cat="S[pss]\NP">
+     <lf start="4" span="1" word="parked" lemma="park" pos="VBN" chunk="I-VP" entity="O" cat="S[pss]\NP" />
+     <rule type="fa" cat="(S[X]\NP)\(S[X]\NP)">
+      <lf start="5" span="1" word="near" lemma="near" pos="IN" chunk="I-PP" entity="O" cat="((S\NP)\(S\NP))/NP" />
+      <rule type="fa" cat="NP[nb]">
+       <lf start="6" span="1" word="a" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+       <lf start="7" span="1" word="building" lemma="building" pos="NN" chunk="I-NP" entity="O" cat="N" />
+      </rule>
+     </rule>
+    </rule>
+   </rule>
+  </rule>
+  <lf start="8" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+<ccg>
+ <rule type="rp" cat="S[dcl]">
+  <rule type="ba" cat="S[dcl]">
+   <rule type="fa" cat="NP[nb]">
+    <lf start="0" span="1" word="The" lemma="the" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+    <lf start="1" span="1" word="bicycle" lemma="bicycle" pos="NN" chunk="I-NP" entity="O" cat="N" />
+   </rule>
+   <rule type="fa" cat="S[dcl]\NP">
+    <lf start="2" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[pss]\NP)" />
+    <rule type="ba" cat="S[pss]\NP">
+     <lf start="3" span="1" word="placed" lemma="place" pos="VBN" chunk="I-VP" entity="O" cat="S[pss]\NP" />
+     <rule type="fa" cat="(S[X]\NP)\(S[X]\NP)">
+      <lf start="4" span="1" word="on" lemma="on" pos="IN" chunk="I-PP" entity="O" cat="((S\NP)\(S\NP))/NP" />
+      <rule type="ba" cat="NP">
+       <rule type="lex" cat="NP">
+        <lf start="5" span="1" word="top" lemma="top" pos="NN" chunk="I-NP" entity="O" cat="N" />
+       </rule>
+       <rule type="fa" cat="NP\NP">
+        <lf start="6" span="1" word="of" lemma="of" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
+        <rule type="fa" cat="NP[nb]">
+         <lf start="7" span="1" word="a" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+         <rule type="fa" cat="N">
+          <lf start="8" span="1" word="white" lemma="white" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
+          <lf start="9" span="1" word="car" lemma="car" pos="NN" chunk="I-NP" entity="O" cat="N" />
+         </rule>
+        </rule>
+       </rule>
+      </rule>
+     </rule>
+    </rule>
+   </rule>
+  </rule>
+  <lf start="10" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+<ccg>
+ <rule type="rp" cat="S[dcl]">
+  <rule type="ba" cat="S[dcl]">
+   <lf start="0" span="1" word="Nobody" lemma="nobody" pos="DT" chunk="I-NP" entity="O" cat="NP" />
+   <rule type="fa" cat="S[dcl]\NP">
+    <lf start="1" span="1" word="is" lemma="be" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP)/(S[ng]\NP)" />
+    <lf start="2" span="1" word="cycling" lemma="cycle" pos="VBG" chunk="I-VP" entity="O" cat="S[ng]\NP" />
+   </rule>
+  </rule>
+  <lf start="3" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+</candc>

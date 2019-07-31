@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="candc.xml"?>
+
+<candc>
+<ccg>
+ <rule type="rp" cat="NP">
+  <rule type="ba" cat="NP">
+   <rule type="fa" cat="NP[nb]">
+    <lf start="0" span="1" word="A" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+    <rule type="fa" cat="N">
+     <lf start="1" span="1" word="white" lemma="white" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
+     <rule type="fa" cat="N">
+      <lf start="2" span="1" word="mute" lemma="mute" pos="NN" chunk="I-NP" entity="O" cat="N/N" />
+      <lf start="3" span="1" word="swan" lemma="swan" pos="NN" chunk="I-NP" entity="O" cat="N" />
+     </rule>
+    </rule>
+   </rule>
+   <rule type="fa" cat="NP\NP">
+    <lf start="4" span="1" word="in" lemma="in" pos="IN" chunk="I-PP" entity="O" cat="(NP\NP)/NP" />
+    <rule type="fa" cat="NP[nb]">
+     <lf start="5" span="1" word="a" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+     <lf start="6" span="1" word="beak" lemma="beak" pos="NN" chunk="I-NP" entity="O" cat="N" />
+    </rule>
+   </rule>
+  </rule>
+  <lf start="7" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+<ccg>
+ <rule type="ba" cat="NP">
+  <rule type="fa" cat="NP[nb]">
+   <lf start="0" span="1" word="A" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+   <lf start="1" span="1" word="hand" lemma="hand" pos="NN" chunk="I-NP" entity="O" cat="N" />
+  </rule>
+  <rule type="conj" cat="NP\NP">
+   <lf start="2" span="1" word="and" lemma="and" pos="CC" chunk="O" entity="O" cat="conj" />
+   <rule type="ba" cat="NP">
+    <rule type="fa" cat="NP[nb]">
+     <lf start="3" span="1" word="a" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+     <rule type="fa" cat="N">
+      <lf start="4" span="1" word="mute" lemma="mute" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
+      <lf start="5" span="1" word="swan" lemma="swan" pos="NN" chunk="I-NP" entity="O" cat="N" />
+     </rule>
+    </rule>
+    <rule type="conj" cat="NP\NP">
+     <lf start="6" span="1" word="and" lemma="and" pos="CC" chunk="I-NP" entity="O" cat="conj" />
+     <rule type="rp" cat="NP">
+      <rule type="lex" cat="NP">
+       <lf start="7" span="1" word="water" lemma="water" pos="NN" chunk="I-NP" entity="O" cat="N" />
+      </rule>
+      <lf start="8" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+     </rule>
+    </rule>
+   </rule>
+  </rule>
+ </rule>
+</ccg>
+<ccg>
+ <rule type="rp" cat="NP[nb]">
+  <rule type="fa" cat="NP[nb]">
+   <lf start="0" span="1" word="A" lemma="a" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" />
+   <rule type="ba" cat="N">
+    <rule type="fa" cat="N">
+     <lf start="1" span="1" word="mute" lemma="mute" pos="JJ" chunk="I-NP" entity="O" cat="N/N" />
+     <lf start="2" span="1" word="swan" lemma="swan" pos="NN" chunk="I-NP" entity="O" cat="N" />
+    </rule>
+    <rule type="conj" cat="N\N">
+     <lf start="3" span="1" word="and" lemma="and" pos="CC" chunk="I-NP" entity="O" cat="conj" />
+     <lf start="4" span="1" word="water" lemma="water" pos="NN" chunk="I-NP" entity="O" cat="N" />
+    </rule>
+   </rule>
+  </rule>
+  <lf start="5" span="1" word="." lemma="." pos="." chunk="O" entity="O" cat="." />
+ </rule>
+</ccg>
+</candc>
