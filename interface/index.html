@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html>
+<head>
+<title>input</title>
+</head>
+<body>
+<br>
+<br>
+<center>
+<p>
+<h1>GRIM</h1>
+<form action="/cgi-bin/inference_sv.py" method="POST">
+	<input type="radio" name="select" value="prover" checked>prover
+	<input type="radio" name="select" value="model_check">model check<br>
+	<input type="radio" name="parser" value="candc" checked>C&C
+	<input type="radio" name="parser" value="easyccg">easyccg
+	<input type="radio" name="parser" value="depccg">depccg<br>
+	<input type="checkbox" name="abduction" value="true">アブダクション
+	<input type="checkbox" name="caption" value="true">キャプション<br><br>
+	<select name="input">
+	<option value="text">Text</option>
+	<option value="fol">FOL</option>
+	</select>
+	<input id="input" type="text" name="text" size="60" value="There is a cat." />
+	<input type="submit" />
+</form>
+</p><br>
+<p>
+<h1>SceneGraph</h1>
+<form action="/cgi-bin/inference_graph.py" method="POST">
+	<input type="radio" name="select" value="prover" checked>prover
+	<input type="radio" name="select" value="model_check">model check<br>
+	<input type="radio" name="parser" value="candc" checked>C&C
+	<input type="radio" name="parser" value="easyccg">easyccg
+	<input type="radio" name="parser" value="depccg">depccg<br><br>
+	<select name="input">
+	<option value="text">Text</option>
+	<option value="fol">FOL</option>
+	</select>
+	<input id="input" type="text" name="text" size="60" value="There is a cat." />
+	<input type="submit" />
+</form>
+</p>
+</center>
+</form>
+</body>
+</html>
