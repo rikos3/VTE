@@ -52,7 +52,8 @@ unzip visual_genome.zip
 
 ### Usage
 
-Change python3
+`inference_sv.py`: Change the path for python3 in the shebang.
+
 ```
 ./usage
 ```
