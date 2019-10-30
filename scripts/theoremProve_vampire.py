@@ -1,16 +1,16 @@
 # coding: utf-8
 
-from os.path import expanduser
-HOME = expanduser("~")
 
-MMI = HOME + "/Multimodal_Inference"
-C2L = HOME + "/ccg2lambda"
-vampire_dir = MMI + "/vampire"
+with open("../vte_location.txt", "r") as f:
+	VTE = f.read().rstrip("\n")
+with open("../ccg2lambda_location.txt", "r") as f:
+	C2L = f.read().rstrip("\n")
+vampire_dir = VTE + "/vampire"
 
 import subprocess
 import sys
 sys.path.append(C2L + "/scripts")
-sys.path.append(MMI + "/scripts")
+sys.path.append(VTE + "/scripts")
 from nltk2tptp import convert_to_tptp_proof
 
 import multiprocessing
@@ -30,28 +30,28 @@ import make_compound as mcomp
 from nltk.corpus import wordnet as wn
 
 # load new_model
-with open(MMI + "/data/new_model.pkl", 'rb') as f:
+with open(VTE + "/data/new_model.pkl", 'rb') as f:
   new_model = pickle.load(f)
 # load new_fol
-with open(MMI + '/data/new_fol.pkl', 'rb') as f:
+with open(VTE + '/data/new_fol.pkl', 'rb') as f:
   new_fol = pickle.load(f)
 # load comments
-with open(MMI + '/data/comments.pkl', 'rb') as f:
+with open(VTE + '/data/comments.pkl', 'rb') as f:
   comments = pickle.load(f)
 # load model
-with open(MMI + "/data/model.pkl", 'rb') as f:
+with open(VTE + "/data/model.pkl", 'rb') as f:
   base_model = pickle.load(f)
 # load fol
-with open(MMI + '/data/fol.pkl', 'rb') as f:
+with open(VTE + '/data/fol.pkl', 'rb') as f:
   base_fol = pickle.load(f)
 # load fol
-with open(MMI + '/data/fol_simple.pkl', 'rb') as f:
+with open(VTE + '/data/fol_simple.pkl', 'rb') as f:
   simple_fol = pickle.load(f)
 # load words
-with open(MMI + '/data/words_elst.pkl', 'rb') as f:
+with open(VTE + '/data/words_elst.pkl', 'rb') as f:
   words_elsts = pickle.load(f)
 # load noise_keys
-with open(MMI + '/data/noise_keys.pkl', 'rb') as f:
+with open(VTE + '/data/noise_keys.pkl', 'rb') as f:
   noise_lst = pickle.load(f)
 
 lexpr = Expression.fromstring

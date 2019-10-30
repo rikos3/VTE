@@ -1,9 +1,8 @@
 # coding: utf-8
 
-from os.path import expanduser
-HOME = expanduser("~")
 
-MMI = HOME + "/Multimodal_Inference"
+with open("../vte_location.txt", "r") as f:
+	VTE = f.read().rstrip("\n")
 GRIM = HOME + "/grim/data"
 
 import json
@@ -11,7 +10,7 @@ import pickle
 import re
 from nltk.sem import Valuation, Model
 
-with open(MMI + "/data/grim.json", "r") as f:
+with open(VTE + "/data/grim.json", "r") as f:
   grim_lst = json.load(f)
 
 # for 1-place predicate
@@ -100,9 +99,9 @@ if __name__ == '__main__':
     model[model_id] = m
   
   # save model
-  with open(MMI + '/work/structure.pkl', 'wb') as f:
+  with open(VTE + '/work/structure.pkl', 'wb') as f:
     pickle.dump(model, f, protocol=2)
   
   # save words
-  with open(MMI + '/work/words_elst.pkl', 'wb') as f:
+  with open(VTE + '/work/words_elst.pkl', 'wb') as f:
     pickle.dump(word_data, f, protocol=2)

@@ -1,10 +1,9 @@
 # coding: utf-8
 
-from os.path import expanduser
-HOME = expanduser("~")
-
-VTE = HOME + "/VTE"
-C2L = HOME + "/ccg2lambda"
+with open("vte_location.txt", "r") as f:
+  VTE = f.read().rstrip("\n")
+with open("ccg2lambda_location.txt", "r") as f:
+  C2L = f.read().rstrip("\n")
 
 import sys
 sys.path.append(C2L + "/scripts")
@@ -16,8 +15,7 @@ from nltk.sem.logic import *
 from linguistic_tools import *
 from nltk2normal import *
 
-from theoremProver_prover9 import theoremProver_prover9 
-#from theoremProver_prover9 import theoremProver_vampire
+import theoremProver_prover9 as tpp9
 
 lexpr = Expression.fromstring
 
@@ -64,7 +62,7 @@ def check_polarity(expression):
   else:
     return True
 
-def theorem_proving(goal, abd, cap, prover):
+def theorem_proving(goal, dataset, abd, cap, prover, output):
 
   try:
     goal = lexpr(goal)
@@ -75,14 +73,23 @@ def theorem_proving(goal, abd, cap, prover):
   if success:
 
     if check_polarity(goal):
-      formula = VTE + '/work/formula_s.pkl'
+      if dataset == 'grim':
+        formula = VTE + '/work/formula_s.pkl'
+      elif dataset == 'visual_genome':
+        formula = VTE + '/work/formula_vg_s.pkl'
     else:
-      formula = VTE + '/work/formula_c.pkl'
+      if dataset == 'grim':
+        formula = VTE + '/work/formula_c.pkl'
+      elif dataset == 'visual_genome':
+        formula = VTE + '/work/formula_vg_c.pkl'
 
     if prover == 'prover9':
-      theoremProver_prover9(goal=goal, formula=formula, abd=abd, cap=cap, mace4=False)
+      #return(tpp9.theorem_proving(goal=goal, formula=formula, abd=abd, cap=cap, mace4=False, output=output))
+      res = list(set(tpp9.theorem_proving(goal=goal, formula=formula, dataset=dataset, abd=abd, cap=cap, mace4=False, output=output)) - {"beggars-210035_640", "still-life-379858_640"})
+      return(res)
     elif prover == 'prover9+mace4':
-      theoremProver_prover9(goal=goal, formula=formula, abd=abd, cap=cap, mace4=True)
+      res = list(set(tpp9.theorem_proving(goal=goal, formula=formula, dataset=dataset, abd=abd, cap=cap, mace4=False, output=output)) - {"beggars-210035_640", "still-life-379858_640"})
+      return(res)
 #    elif prover == 'vampire':
 #      theoremProving_vampire(goal=goal, formula=formula, abd=abd, cap=cap)
 
@@ -93,9 +100,11 @@ if __name__ == '__main__':
 
   parser = argparse.ArgumentParser()
   parser.add_argument('--goal', required=True)
+  parser.add_argument('--dataset', default='grim', choices=['grim', 'visual_genome'])
   parser.add_argument('--abd', default=False)
   parser.add_argument('--cap', default=False)
   parser.add_argument('--prover', default='prover9', choices=['prover9', 'prover9+mace4', 'vampire'])
+  parser.add_argument('--output', default=True)
   args = parser.parse_args()
 
-  theorem_proving(args.goal, args.abd, args.cap, args.prover)
+  theorem_proving(args.goal, args.dataset, args.abd, args.cap, args.prover, args.output)

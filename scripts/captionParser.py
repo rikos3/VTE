@@ -1,10 +1,10 @@
 # coding: utf-8
 
-from os.path import expanduser
-HOME = expanduser("~")
 
-MMI = HOME + "/Multimodal_Inference"
-C2L = HOME + "/ccg2lambda"
+with open("../vte_location.txt", "r") as f:
+	VTE = f.read().rstrip("\n")
+with open("../ccg2lambda_location.txt", "r") as f:
+	C2L = f.read().rstrip("\n")
 
 import pickle
 import json
@@ -18,7 +18,7 @@ from nltk.sem.logic import *
 from nltk.stem import WordNetLemmatizer
 
 import sys
-sys.path.append(MMI + "/scripts")
+sys.path.append(VTE + "/scripts")
 sys.path.append(C2L + "/scripts")
 
 import time
@@ -31,7 +31,7 @@ from linguistic_tools import *
 from add_axiom import addAxiom
 from read_xml import use_lesk
 
-with open(MMI + "/data/grim.json", "r") as f:
+with open(VTE + "/data/grim.json", "r") as f:
   grim_lst = json.load(f)
 
 lemmatizer = WordNetLemmatizer()
@@ -185,15 +185,15 @@ def caption_parser(key):
     hypo_data[model_pred] = list(hyponyms)
 
   #Parse captions
-  output = subprocess.run([MMI + "/scripts/parse_multi_caption.sh", parser, key], \
+  output = subprocess.run([VTE + "/scripts/parse_multi_caption.sh", parser, key], \
                             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
   texts = output.stdout.decode('utf-8')
   text_lst = [text for text in texts.split("\n") if text != '']
 
-  xmlfile = MMI + "/work/captions/" + key + "." + parser + ".sem.xml"
+  xmlfile = VTE + "/work/captions/" + key + "." + parser + ".sem.xml"
   wn_data_lst = use_lesk(xmlfile)
 
-  tokfile = MMI + '/work/captions/' + key + ".tok.w2n"
+  tokfile = VTE + '/work/captions/' + key + ".tok.w2n"
   with open(tokfile) as f:
     lines = f.readlines()
   
@@ -406,15 +406,15 @@ if __name__ == '__main__':
   args = parser0.parse_args()
 
   # load model
-  with open(MMI + '/work/' + args.input + '.pkl', 'rb') as f:
+  with open(VTE + '/work/' + args.input + '.pkl', 'rb') as f:
     model = pickle.load(f)
 
   # load words_elst
-  with open(MMI + '/work/words_elst.pkl', 'rb') as f:
+  with open(VTE + '/work/words_elst.pkl', 'rb') as f:
     words_elsts = pickle.load(f)
 
   # load two_predicates
-  with open(MMI + '/data/two_predicates.pkl', 'rb') as f:
+  with open(VTE + '/data/two_predicates.pkl', 'rb') as f:
     two_predicates = pickle.load(f)
 
   parser = args.parser
@@ -438,13 +438,13 @@ if __name__ == '__main__':
   sys.stdout.write("\nfinish!\n")
 
   # save
-  with open(MMI + '/work/' + args.output + '.pkl', 'wb') as f:
+  with open(VTE + '/work/' + args.output + '.pkl', 'wb') as f:
     pickle.dump(new_model, f, protocol=2)
 
   # save
-  with open(MMI + '/work/comments.pkl', 'wb') as f:
+  with open(VTE + '/work/comments.pkl', 'wb') as f:
     pickle.dump(comments_data, f, protocol=2)
 
   # save
-  with open(MMI + '/work/parse_errors.pkl', 'wb') as f:
+  with open(VTE + '/work/parse_errors.pkl', 'wb') as f:
     pickle.dump(parse_error, f, protocol=2)

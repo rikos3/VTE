@@ -1,10 +1,5 @@
 # coding: utf-8
 
-from os.path import expanduser
-HOME = expanduser("~")
-
-MMI = HOME + "/Multimodal_Inference"
-
 import pickle
 import argparse
 from nltk.sem.logic import *
@@ -104,17 +99,20 @@ def structure2formula(model):
 
 if __name__ == "__main__":
 
+  with open("../vte_location.txt", "r") as f:
+  	VTE = f.read().rstrip("\n")
+
   parser = argparse.ArgumentParser()
   parser.add_argument("--input", default='structure', help='File name of structure data (default=structure)')
   parser.add_argument("--output", default='formula_s', help='File name of formula data (default=formula_s)')
   args = parser.parse_args()
 
   # load model
-  with open(MMI + '/work/' + args.input + '.pkl', 'rb') as f:
+  with open(VTE + '/work/' + args.input + '.pkl', 'rb') as f:
     model = pickle.load(f)
 
   data = structure2formula(model)
 
   # save
-  with open(MMI + '/work/' + args.output + '.pkl', 'wb') as f:
+  with open(VTE + '/work/' + args.output + '.pkl', 'wb') as f:
     pickle.dump(data, f, protocol=2)

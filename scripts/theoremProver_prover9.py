@@ -1,10 +1,9 @@
 # coding: utf-8
 
-from os.path import expanduser
-HOME = expanduser("~")
-
-VTE = HOME + "/VTE"
-C2L = HOME + "/ccg2lambda"
+with open("vte_location.txt", "r") as f:
+  VTE = f.read().rstrip("\n")
+with open("ccg2lambda_location.txt", "r") as f:
+	C2L = f.read().rstrip("\n")
 
 import sys
 sys.path.append(C2L + "/scripts")
@@ -59,7 +58,7 @@ def prove_fun(queue, i, is_prover, goal, key):
   queue.put((i, is_prover, key if res else None))
 
 
-def prover9(goal, flag_sub):
+def prover9(goal, flag_sub, output):
   queue = Queue()
   prover_processes = []
 
@@ -81,13 +80,13 @@ def prover9(goal, flag_sub):
 
     if key is not None:
       res.append(key)
-      if not flag_sub:
+      if (not flag_sub and output):
         print(key)
 
   return(res)
 
 
-def prover9_mace4(goal):
+def prover9_mace4(goal, output):
   queue = Queue()
   prover_processes = []
   modelbuilder_processes = []
@@ -116,7 +115,8 @@ def prover9_mace4(goal):
 
     if key is not None:
       res.append(key)
-      print(key)
+      if output:
+        print(key)
 
   return(res)
 
@@ -131,7 +131,7 @@ def check_existence(goal):
         keys = [key for key in sub_res if key]
   return(goal)
 
-def theoremProver_prover9(goal, formula, abd, cap, mace4):
+def theorem_proving(goal, formula, *, dataset='grim', abd=False, cap=False, mace4=False, output=True):
 
   global flag_cap
   global flag_abd
@@ -143,12 +143,17 @@ def theoremProver_prover9(goal, formula, abd, cap, mace4):
     formulas = pickle.load(f)
 
   global words_elsts
-  with open(VTE + "/work/words_elst.pkl", "rb") as f:
-    words_elsts = pickle.load(f)
-  if flag_cap:
-    global comments
-    with open(VTE + "/work/comments.pkl", "rb") as f:
-      comments = pickle.load(f)
+  if dataset == 'grim':
+    with open(VTE + "/work/words_elst.pkl", "rb") as f:
+      words_elsts = pickle.load(f)
+    if flag_cap:
+      global comments
+      with open(VTE + "/work/comments.pkl", "rb") as f:
+        comments = pickle.load(f)
+  elif dataset == 'visual_genome':
+    with open(VTE + "/work/words_elst_graph_200.pkl", "rb") as f:
+      words_elsts = pickle.load(f)
+    
 
   global keys
   keys = formulas.keys()
@@ -160,6 +165,6 @@ def theoremProver_prover9(goal, formula, abd, cap, mace4):
 
 
   if mace4:
-    prover9_mace4(goal)
+    return(prover9_mace4(goal, output))
   else:
-    prover9(goal, False)
+    return(prover9(goal, False, output))

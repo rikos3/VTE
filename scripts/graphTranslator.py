@@ -12,9 +12,9 @@ from nltk.stem.snowball import SnowballStemmer
 stemmer = SnowballStemmer("english")
 
 from os.path import expanduser, splitext
-HOME = expanduser("~")
 
-MMI = HOME + "/Multimodal_Inference"
+with open("../vte_location.txt", "r") as f:
+	VTE = f.read().rstrip("\n")
 
 def get_newEntity(domain):
   i = 1
@@ -26,10 +26,10 @@ def get_newEntity(domain):
 
 if __name__ == '__main__':
 
-  with open(MMI + "/data/sg_test_annotations.json") as f:
+  with open(VTE + "/data/sg_test_annotations.json") as f:
     data = json.load(f)
 
-  with open(MMI + "/data/test_id_200.json") as f:
+  with open(VTE + "/data/test_id_200.json") as f:
     id_lst = json.load(f)
   
   models = [{}, {}, {}]
@@ -52,7 +52,7 @@ if __name__ == '__main__':
       relations = []
   
       for obj_id, obj in enumerate(d['objects']):
-        obj_name = obj['names'][0].replace('the ','').replace('.', '').replace(',', '_').replace('-', '_').replace(' ', '_').replace('&', '_and_')
+        obj_name = obj['names'][0].replace('the ','').replace('.', '').replace(',', '_').replace('-', '_').replace(' ', '_').replace('&', '_and_').replace("'s", "_")
         obj_name = re.sub(r'_[0-9]*', '', obj_name)
         while obj_name[0] == '_':
           obj_name = obj_name[1:]
@@ -159,17 +159,17 @@ if __name__ == '__main__':
         word_data[key] = data
 
   #save model
-  #with open(MMI + '/work/structure_g_obj.pkl', 'wb') as f:
+  #with open(VTE + '/work/structure_g_obj.pkl', 'wb') as f:
   #  pickle.dump(models[0], f, protocol=2)
 
   #save model
-  #with open(MMI + '/work/structure_g_obj_att.pkl', 'wb') as f:
+  #with open(VTE + '/work/structure_g_obj_att.pkl', 'wb') as f:
   #  pickle.dump(models[1], f, protocol=2)
 
   #save model
-  with open(MMI + '/work/structure_graph_200.pkl', 'wb') as f:
+  with open(VTE + '/work/structure_graph_200.pkl', 'wb') as f:
     pickle.dump(models[2], f, protocol=2)
 
   # save words
-  with open(MMI + '/work/words_elst_graph_200.pkl', 'wb') as f:
+  with open(VTE + '/work/words_elst_graph_200.pkl', 'wb') as f:
     pickle.dump(word_data, f, protocol=2)

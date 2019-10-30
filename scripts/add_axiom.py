@@ -1,12 +1,12 @@
 
-from os.path import expanduser
-HOME = expanduser("~")
-MMI = HOME + "/multimodal_inference"
-C2L = HOME + "/ccg2lambda"
+with open("vte_location.txt", "r") as f:
+	VTE = f.read().rstrip("\n")
+with open("ccg2lambda_location.txt", "r") as f:
+	C2L = f.read().rstrip("\n")
 
 import sys
 sys.path.append(C2L + "/scripts")
-
+  
 from linguistic_tools import *
 from nltk.sem.logic import *
 import pickle
@@ -14,8 +14,9 @@ import pickle
 lexpr = Expression.fromstring
 
 # load 2-place predicates
-with open(MMI + '/data/two_predicates.pkl', 'rb') as f:
-    two_predicates = pickle.load(f)
+with open(VTE + '/data/two_predicates.pkl', 'rb') as f:
+  two_predicates = pickle.load(f)
+
 
 def addAxiom(g_preds, words_elst):
   avoid_lst = []

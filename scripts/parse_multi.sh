@@ -8,15 +8,15 @@
 parser=$1
 
 home=$HOME
-c2l_dir="${home}/ccg2lambda"
-mm_dir="${home}/multimodal_inference"
-candc_dir="${home}/candc-1.00"
-easyccg_dir="${home}/easyccg"
-depccg_dir="${home}/depccg"
-depccg_sv_dir="${home}/.opam/system"
-templates="${mm_dir}/semantics/semantic_templates_en_image.yaml"
+c2l_dir=`cat ccg2lambda_location.txt`
+vte_dir=`cat vte_location.txt`
+candc_dir="${c2l_dir}/en/candc-1.00"
+easyccg_dir="${c2l_dir}/en/easyccg"
+#depccg_dir="${home}/depccg"
+#depccg_sv_dir="${home}/.opam/system"
+templates="${vte_dir}/semantics/semantic_templates_en_image.yaml"
 
-input="${mm_dir}/input.txt"
+input="${vte_dir}/input/input.txt"
 
 # Set up soap_server
 # at $candc_dir:
