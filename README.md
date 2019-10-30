@@ -40,13 +40,19 @@ mv sg_dataset VTE/.
 
 ### Setting
 
+Download zip files (grim.zip / visual_genome.zip)
+[Here](https://drive.google.com/drive/folders/1gRxbAkb3Fz8CxCEd-N2SbtBs8IUFoJdv?usp=sharing)
+
 ```
 echo <VTE file Path> > vte_location.txt
 echo <ccg2lambda file Path> > ccg2lambda_location.txt
+unzip grim.zip
+unzip visual_genome.zip
 ```
 
 ### Usage
 
+Change python3
 ```
 ./usage
 ```
