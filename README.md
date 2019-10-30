@@ -38,7 +38,18 @@ unzip sg_dataset.zip
 mv sg_dataset VTE/.
 ```
 
+### Setting
+
+```
+echo <VTE file Path> > vte_location.txt
+echo <ccg2lambda file Path> > ccg2lambda_location.txt
+```
+
 ### Usage
+
+```
+./usage
+```
 
 ### Citation
 ```
