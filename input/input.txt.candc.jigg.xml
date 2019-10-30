@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+  <document>
+    <sentences>
+      <sentence>
+        <tokens>
+          <token start="0" span="1" pos="EX" chunk="I-NP" entity="O" cat="NP[thr]" id="t0_0" surf="There" base="there"/>
+          <token start="1" span="1" pos="VBZ" chunk="I-VP" entity="O" cat="(S[dcl]\NP[thr])/NP" id="t0_1" surf="is" base="be"/>
+          <token start="2" span="1" pos="DT" chunk="I-NP" entity="O" cat="NP[nb]/N" id="t0_2" surf="a" base="a"/>
+          <token start="3" span="1" pos="NN" chunk="I-NP" entity="O" cat="N" id="t0_3" surf="cat" base="cat"/>
+          <token start="4" span="1" pos="." chunk="O" entity="O" cat="." id="t0_4" surf="." base="."/>
+        </tokens>
+        <ccg root="s0_sp0" id="s0_ccg0">
+          <span root="true" id="s0_sp0" child="s0_sp1 s0_sp8" pos="None" category="S[dcl=true]" rule="rp"/>
+          <span id="s0_sp1" child="s0_sp2 s0_sp3" pos="None" category="S[dcl=true]" rule="ba"/>
+          <span start="0" span="1" pos="EX" chunk="I-NP" entity="O" id="s0_sp2" surf="There" base="there" terminal="t0_0" category="NP[thr=true]"/>
+          <span id="s0_sp3" child="s0_sp4 s0_sp5" pos="None" category="S[dcl=true]\NP[thr=true]" rule="fa"/>
+          <span start="1" span="1" pos="VBZ" chunk="I-VP" entity="O" id="s0_sp4" surf="is" base="be" terminal="t0_1" category="(S[dcl=true]\NP[thr=true])/NP"/>
+          <span id="s0_sp5" child="s0_sp6 s0_sp7" pos="None" category="NP[nb=true]" rule="fa"/>
+          <span start="2" span="1" pos="DT" chunk="I-NP" entity="O" id="s0_sp6" surf="a" base="a" terminal="t0_2" category="NP[nb=true]/N"/>
+          <span start="3" span="1" pos="NN" chunk="I-NP" entity="O" id="s0_sp7" surf="cat" base="cat" terminal="t0_3" category="N"/>
+          <span start="4" span="1" pos="." chunk="O" entity="O" id="s0_sp8" surf="." base="." terminal="t0_4" category="."/>
+        </ccg>
+      </sentence>
+    </sentences>
+  </document>
+</root>
+
