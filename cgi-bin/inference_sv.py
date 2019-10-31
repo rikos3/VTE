@@ -22,7 +22,7 @@ from visualization_tools import convert_root_to_mathml
 from word2num import word_to_num as w2n
 
 from theoremProver import theorem_proving
-#import model_check as mc
+import model_check as mc
 import make_compound as mcomp
 
 def prove(fol):
