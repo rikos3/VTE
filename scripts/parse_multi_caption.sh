@@ -9,17 +9,23 @@
 parser=$1
 
 home=$HOME
-mm_dir="${home}/Multimodal_Inference"
-c2l_dir="${home}/ccg2lambda"
-candc_dir="${mm_dir}/candc-1.00"
-easyccg_dir="${mm_dir}/easyccg"
-depccg_dir="${home}/depccg"
-depccg_sv_dir="${home}/.opam/system"
-templates="${mm_dir}/semantics/semantic_templates_en_image.yaml"
+c2l_dir=`cat ccg2lambda_location.txt`
+vte_dir=`cat vte_location.txt`
+candc_dir="${c2l_dir}/en/candc-1.00"
+easyccg_dir="${c2l_dir}/en/easyccg"
+#depccg_dir="${home}/depccg"
+#depccg_sv_dir="${home}/.opam/system"
+templates="${vte_dir}/semantics/semantic_templates_en_image.yaml"
+
+if [ ! -d "${vte_dir}/input" ]; then
+  mkdir ${vte_dir}/input
+fi
+
+input="${vte_dir}/input/input.txt"
 
 key=$2
-input="${mm_dir}/grim/data/${key}.t"
-output="${mm_dir}/work/captions/${key}"
+input="${vte_dir}/grim/data/${key}.t"
+output="${vte_dir}/work/captions/${key}"
 
 # Set up soap_server
 # at $candc_dir:
