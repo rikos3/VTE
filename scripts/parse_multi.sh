@@ -16,6 +16,10 @@ easyccg_dir="${c2l_dir}/en/easyccg"
 #depccg_sv_dir="${home}/.opam/system"
 templates="${vte_dir}/semantics/semantic_templates_en_image.yaml"
 
+if [ ! -d "${vte_dir}/input" ]; then
+  mkdir ${vte_dir}/input
+fi
+
 input="${vte_dir}/input/input.txt"
 
 # Set up soap_server
