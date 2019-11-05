@@ -2,10 +2,9 @@
 
 # image(graph) + captions entails an sentence
 
-from os.path import expanduser
-HOME = expanduser("~")
 
-VTE = HOME + "/VTE"
+with open("../vte_location.txt", "r") as f:
+	VTE = f.read().rstrip("\n")
 
 import sys
 sys.path.append(VTE + "/scripts")

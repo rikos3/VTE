@@ -2,13 +2,12 @@
 
 # -*- coding: utf-8 -*-
 
-from os.path import expanduser
-HOME = expanduser("~")
 
-MMI = HOME + "/multimodal_inference"
+with open("../vte_location.txt", "r") as f:
+	VTE = f.read().rstrip("\n")
 
 import sys
-sys.path.append(MMI + "/scripts")
+sys.path.append(VTE + "/scripts")
 
 import subprocess
 import time
@@ -25,21 +24,21 @@ import pickle
 import numpy as np
 
 # load fol
-with open(MMI + '/data/fol_graph_johnson_200.pkl', 'rb') as f:
+with open(VTE + '/data/fol_graph_johnson_200.pkl', 'rb') as f:
   fol = pickle.load(f)
 
 # load sentences
 # sentence, Con, Num, Q, Rel, Neg
-sentence_data = pd.read_csv(MMI + "/data/sentences_2.csv")
+sentence_data = pd.read_csv(VTE + "/data/sentences_2.csv")
 
 # load system_result
 # key: sentence, value:image ID list
-with open(MMI + '/data/answer_johnson_200_2.pkl', 'rb') as f:
+with open(VTE + '/data/answer_johnson_200_2.pkl', 'rb') as f:
   res_system = pickle.load(f)
 
 # load human_result
 # key: sentence, value:image ID list
-with open(MMI + '/data/human_johnson_200_2.pkl', 'rb') as f:
+with open(VTE + '/data/human_johnson_200_2.pkl', 'rb') as f:
   res_human = pickle.load(f)
 
 
@@ -128,5 +127,5 @@ if __name__ == '__main__':
   run_testsuites()
 
 #save 
-#with open(MMI + '/data/resulti_test_ACL.pkl', 'wb') as f:
+#with open(VTE + '/data/resulti_test_ACL.pkl', 'wb') as f:
 #  pickle.dump(res_data, f, protocol=2)

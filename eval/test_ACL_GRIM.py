@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from os.path import expanduser
-HOME = expanduser("~")
 
-VTE = HOME + "/VTE"
+with open("../vte_location.txt", "r") as f:
+	VTE = f.read().rstrip("\n")
 
 import sys
 sys.path.append(VTE + "/scripts")
@@ -151,4 +150,4 @@ if __name__ == '__main__':
   res_lst = np.concatenate([array1, array2], axis=1).tolist()
   df = pd.DataFrame(res_lst, columns=['sentence', 'formula', 'B_Precision', 'B_Recall', 'B_F', 'A_Precision', 'A_Recall', 'A_F'])
 
-  df.to_csv(MMI + "/result/result_test_ACL_GRIM.csv")
+  df.to_csv(VTE + "/result/result_test_ACL_GRIM.csv")
